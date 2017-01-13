@@ -1,6 +1,8 @@
 
 create database simpleAppDB;
 
+use simpleAppDB;
+
 CREATE TABLE Student (
   studentId int(5) NOT NULL AUTO_INCREMENT,
   firstName varchar(25) DEFAULT NULL,
