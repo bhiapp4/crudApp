@@ -12,6 +12,7 @@ public class DBConnectionUtility {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/simpleAppDB", "root", "Training@Jn1t");
+				   //DriverManager.getConnection("jdbc:mysql://localhost:3306/simpleAppDB", "root", "Training@Jn1t");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
