@@ -3,7 +3,7 @@ create database simpleAppDB;
 
 use simpleAppDB;
 
-CREATE TABLE Student (
+CREATE TABLE student (
   studentId int(5) NOT NULL AUTO_INCREMENT,
   firstName varchar(25) DEFAULT NULL,
   lastName varchar(25) DEFAULT NULL,
