@@ -47,7 +47,7 @@
 					<div class="col-10">
 						<input class="form-control" type="text" name="course"
 							value="<c:out value="${student.course}"/>" id="course"
-							placeholder="Last Name">
+							placeholder="Course">
 					</div>
 				</div>
 				<div class="form-group row">
