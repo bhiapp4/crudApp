@@ -29,6 +29,8 @@ public class DBConnectionUtility {
     	}
     	catch(SQLException ex){
      	 log("Cannot get connection: " + ex);
+    	}catch(Throwable te){
+     	   te.printStackTrace();
     	}
     	return result;
     }
