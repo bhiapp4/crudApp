@@ -1,8 +1,8 @@
 package com.app.util;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import javax.naming.*;
+import javax.sql.*;
 
 public class DBConnectionUtility {
 
