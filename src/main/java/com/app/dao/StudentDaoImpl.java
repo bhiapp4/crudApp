@@ -73,6 +73,8 @@ public class StudentDaoImpl implements StudentDao{
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return students;
 	}
