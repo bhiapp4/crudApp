@@ -32,4 +32,8 @@ public class DBConnectionUtility {
     	}
     	return result;
     }
+
+    private static void log(Object aObject){
+    	System.out.println(aObject);
+    }
 }
