@@ -8,17 +8,28 @@ public class DBConnectionUtility {
 
 	public static Connection getDBConnection() {
 		
-		Connection connection = null;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/simpleAppDB", "root", "Training@Jn1t");
-				   //DriverManager.getConnection("jdbc:mysql://localhost:3306/simpleAppDB", "root", "Training@Jn1t");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		return connection;
-
-	}
+	String DATASOURCE_CONTEXT = "java:comp/env/jdbc/crudDB";
+    
+    	Connection result = null;
+    	try {
+      		Context initialContext = new InitialContext();
+      		if ( initialContext == null){
+			log("JNDI problem. Cannot get InitialContext.");
+      		}
+      		DataSource datasource = (DataSource)initialContext.lookup(DATASOURCE_CONTEXT);
+      		if (datasource != null) {
+        		result = datasource.getConnection();
+      		}
+      		else {
+       	 		log("Failed to lookup datasource.");
+      		}
+    	}
+    	catch ( NamingException ex ) {
+     	 log("Cannot get connection: " + ex);
+    	}
+    	catch(SQLException ex){
+     	 log("Cannot get connection: " + ex);
+    	}
+    	return result;
+    }
 }
