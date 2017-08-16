@@ -1,7 +1,7 @@
 
-create database simpleAppDB;
+create database crudApp;
 
-use simpleAppDB;
+use crudApp;
 
 CREATE TABLE student (
   studentId int(5) NOT NULL AUTO_INCREMENT,
