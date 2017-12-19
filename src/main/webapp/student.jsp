@@ -12,7 +12,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 </head>
 <body>
-  <h1>Add/Edit Student Page</h1>
+  <h1>Add/Edit Student Page First commit</h1>
    <div class="container container-default">
    		<div class="well">
 			<form action="StudentServlet.do" method="post">	
