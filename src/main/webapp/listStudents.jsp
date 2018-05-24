@@ -13,7 +13,7 @@
 <body>
     <div class="container container-default">
   
-	   <h1>Student List Page</h1>  
+	   <h1>Student List Page V1.1</h1>
 	    <table class="table table-striped">
 	        <thead>
 	            <tr>
@@ -33,9 +33,9 @@
 	                    <td><c:out value="${student.lastName}" /></td>
 	                    <td><c:out value="${student.course}" /></td>
 	                    <td><c:out value="${student.year}" /></td>
-	                    <td><a class="btn btn-primary" role="button"
+	                    <td><a class="btn btn-warning" role="button"
 	                        href="StudentServlet.do?action=edit&studentId=<c:out value="${student.studentId }"/>">Update</a>
-	                    <a class="btn btn-primary" role="button" style="padding-left:5px;"
+	                    <a class="btn btn-danger" role="button" style="padding-left:5px;"
 	                        href="StudentServlet.do?action=delete&studentId=<c:out value="${student.studentId }"/>">Delete</a>
 	                    
 	                    </td>
@@ -45,7 +45,7 @@
 	        </tbody>
 	    </table>
 	    <p>
-	        <a href="StudentServlet.do?action=insert" class="btn btn-primary" role="button">Add Student</a>
+	        <a href="StudentServlet.do?action=insert" class="btn btn-success" role="button">Add Student</a>
 	    </p>
 	</div>
 </body>
