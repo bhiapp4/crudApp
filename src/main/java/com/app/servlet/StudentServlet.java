@@ -19,7 +19,7 @@ public class StudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String lIST_STUDENT = "/listStudents.jsp";
 	public static final String INSERT_OR_EDIT = "/student.jsp";
-	private StudentDao dao = new StudentDaoImpl();
+	private final StudentDao dao = new StudentDaoImpl();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
