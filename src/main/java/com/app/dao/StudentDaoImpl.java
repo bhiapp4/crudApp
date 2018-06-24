@@ -7,12 +7,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import com.app.model.Student;
 import com.app.util.DBConnectionUtility;
 
 public class StudentDaoImpl implements StudentDao{
 
+	private static Logger log = LogManager.getRootLogger();
+	private static final String EROOR_LOG = "StudentDaoImpl class exceptions : ";
+    
 	@Override
 	public void addStudent(Student student) {
 		try(Connection conn = DBConnectionUtility.getDBConnection()) {			
@@ -24,7 +29,7 @@ public class StudentDaoImpl implements StudentDao{
 			preparedStatement.setInt(4, student.getYear());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			log.error(EROOR_LOG + e);
 		}
 	}
 
@@ -36,7 +41,7 @@ public class StudentDaoImpl implements StudentDao{
 			preparedStatement.setInt(1, studentId);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			log.error(EROOR_LOG + e);
 		}
 	}
 
@@ -52,13 +57,13 @@ public class StudentDaoImpl implements StudentDao{
 			preparedStatement.setInt(5, student.getStudentId());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			log.error(EROOR_LOG + e);
 		}
 	}
 
 	@Override
 	public List<Student> getAllStudents() {
-		List<Student> students = new ArrayList<Student>();
+		List<Student> students = new ArrayList<>();
 		try(Connection conn = DBConnectionUtility.getDBConnection()) {			
 			Statement statement = conn.createStatement();
 			ResultSet resultSet = statement.executeQuery("select * from student");
@@ -71,11 +76,9 @@ public class StudentDaoImpl implements StudentDao{
 				student.setYear(resultSet.getInt("year"));
 				students.add(student);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		} catch (SQLException  e) {
+			log.error(EROOR_LOG + e);
+		} 
 		return students;
 	}
 
@@ -95,7 +98,7 @@ public class StudentDaoImpl implements StudentDao{
 				student.setYear(resultSet.getInt("year"));
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			log.error(EROOR_LOG + e);
 		}
 		return student;
 	}
