@@ -29,12 +29,6 @@
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=f5d6ee6dd2e146d2ddff393df02969ea32677c4c",
             "group": "build"
-        },
-        {
-            "label": "azure-deploy",
-            "type": "shell",
-            "command": "mvn azure-webapp:deploy",
-            "group": "build"
         }
     ]
 }
