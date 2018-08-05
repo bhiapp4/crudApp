@@ -12,7 +12,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 </head>
 <body>
-  <h1>Add/Edit Student Page</h1>
+  <h1>Add/Edit Student Page V1.1</h1>
    <div class="container container-default">
    		<div class="well">
 			<form action="StudentServlet.do" method="post">	
@@ -60,7 +60,7 @@
 				</div>
 		
 				<div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-success">Submit</button>
 				</div>
 		
 			</form>

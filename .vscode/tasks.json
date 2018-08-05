@@ -1,0 +1,34 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "verify",
+            "type": "shell",
+            "command": "mvn -B verify",
+            "group": "build"
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "mvn -B test",
+            "group": "test"
+        },
+        {
+            "label": "clean-package",
+            "type": "shell",
+            "command": "mvn clean package",
+            "group": "build"
+        },
+        {
+            "label": "sonar-scan",
+            "type": "shell",
+            "command": "mvn sonar:sonar \
+            -Dsonar.organization=vynu-github \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=f5d6ee6dd2e146d2ddff393df02969ea32677c4c",
+            "group": "build"
+        }
+    ]
+}
